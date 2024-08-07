@@ -5,7 +5,9 @@ import App from './App';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+
 import reportWebVitals from './reportWebVitals';
+import ErrorBoundary from './components/ErrorBoundary';
 
 
 const root = ReactDOM.createRoot(
@@ -13,11 +15,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
     <Provider store={configureStore()}>
-    <App />
-    </Provider>
+    <BrowserRouter>
+    <ErrorBoundary>
+
+    {[<App key="App" />]}
+    </ErrorBoundary>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
