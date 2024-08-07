@@ -5,14 +5,14 @@
 .App {
   margin: 0 auto;
   max-width: 1200px;
-  background-color: lightgray;
+
   display: grid;
-  grid-template-colomns: 0.7fr 0.9fr 1.5fr 0.9fr;
-  grid-template-rows: 2.75rem 1fr;
+  grid-template-columns: 0.7fr 0.9fr 1.5fr 0.9fr;
+  grid-template-rows: 2.75rem 3fr;
   grid-template-areas:
     "nav nav nav nav"
     "sidebar leftmenu content rightmenu";
-  gap: 0.75rem 0.45rem;
+  gap: 0.75rem 0.4rem;
 }
 
 .navigation {
@@ -30,9 +30,19 @@
 }
 .content {
   grid-area: content;
+  min-height: var(--min-screen-height);
   background-color: lightyellow;
 }
 .rightmenu {
   grid-area: rightmenu;
   background-color: gray;
+}
+
+@media screen and (orientation: portrait) and (max-width: 760px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "content";
+  }
 }

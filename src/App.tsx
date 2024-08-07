@@ -1,14 +1,19 @@
 import React from 'react';
 import './App.css';
+import LeftMenu from './components/LeftMenu';
+import Main from './components/Main';
+import Nav from './components/Nav';
+import SideBar from './components/SideBar';
+import RightMenu from './components/RightMenu';
 
 function App() {
   return (
     <div className="App">
-      <div className="navigation">Nav</div>
-      <div className="sidebar">sidebar</div>
-      <div className="leftmenu">leftmenu</div>
-      <div className="content">content</div>
-      <div className="rightmenu">rightmenu</div>
+      <Nav/>
+      <Main/>
+      <SideBar/>
+      <LeftMenu/>
+      <RightMenu/>
     </div>
   );
 }
