@@ -1,5 +1,8 @@
 import React from 'react'
-import { useWindowDimensions } from '../hooks/useWindowDimensions'
+import { useWindowDimensions } from '../../hooks/useWindowDimensions'
+import SideBarMenus from './SideBarMenus'
+
+
 
 
 function SideBar() {
@@ -9,8 +12,9 @@ function SideBar() {
         return null
     }
   return (
-    <div className='sidebar'>
-      Sidebar
+    <div className='sidebar' >
+
+      <SideBarMenus/>
     </div>
   )
 }

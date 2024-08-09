@@ -3,8 +3,9 @@ import './App.css';
 import LeftMenu from './components/LeftMenu';
 import Main from './components/Main';
 import Nav from './components/Nav';
-import SideBar from './components/SideBar';
+
 import RightMenu from './components/RightMenu';
+import SideBar from './components/sidebar/SideBar';
 
 function App() {
   return (
