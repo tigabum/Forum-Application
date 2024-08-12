@@ -10,11 +10,11 @@ import SideBar from './components/sidebar/SideBar';
 function App() {
   return (
     <div className="App">
-      <Nav/>
-      <Main/>
-      <SideBar/>
-      <LeftMenu/>
-      <RightMenu/>
+      <Nav />
+      <Main />
+      <SideBar />
+      <LeftMenu />
+      <RightMenu />
     </div>
   );
 }
