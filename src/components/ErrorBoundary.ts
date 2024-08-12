@@ -1,5 +1,5 @@
-import React from "react";
-import "./ErrorBoundary.css";
+import React from 'react';
+import './ErrorBoundary.css';
 
 interface ErrorBoundaryProps {
   children: React.ReactNode[];
@@ -11,13 +11,16 @@ interface ErrorBoundaryState {
   info: object;
 }
 
-class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = {
       hasError: false,
       error: null,
-      info: { componentStack: "" },
+      info: { componentStack: '' },
     };
   }
 
@@ -26,12 +29,12 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 
   componentDidCatch(error: Error | null, info: React.ErrorInfo) {
-    console.log("error", error);
+    console.log('error', error);
     this.setState({ hasError: true, error, info });
   }
 
   render() {
-    if (this.state.hasError) return "somestring"
+    if (this.state.hasError) return 'somestring';
 
     return this.props.children;
   }

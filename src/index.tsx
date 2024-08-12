@@ -9,19 +9,15 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './components/ErrorBoundary';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <Provider store={configureStore()}>
-    <BrowserRouter>
-    <ErrorBoundary>
-
-    {[<App key="App" />]}
-    </ErrorBoundary>
-    </BrowserRouter>
+      <BrowserRouter>
+        <ErrorBoundary>{[<App key="App" />]}</ErrorBoundary>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

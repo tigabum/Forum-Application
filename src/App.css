@@ -1,5 +1,7 @@
 :root {
   --min-screen-height: 1000px;
+  --border-color: gray;
+  --border: solid 0.1em var(--border-color);
 }
 
 .App {
@@ -10,8 +12,8 @@
   grid-template-columns: 0.7fr 0.9fr 1.5fr 0.9fr;
   grid-template-rows: 2.75rem 3fr;
   grid-template-areas:
-    "nav nav nav nav"
-    "sidebar leftmenu content rightmenu";
+    'nav nav nav nav'
+    'sidebar leftmenu content rightmenu';
   gap: 0.75rem 0.4rem;
 }
 
@@ -37,12 +39,31 @@
   grid-area: rightmenu;
   background-color: gray;
 }
-
+.menu-modal {
+  position: fixed;
+  min-width: 465em;
+  background-color: red;
+  top: 4.5em;
+  left: 50%;
+  transform: translate(-50%);
+  border: var(--border);
+  border-radius: 5px;
+  background-color: lightgray;
+  padding: 1em;
+  z-index: 1000;
+}
 @media screen and (orientation: portrait) and (max-width: 760px) {
   .App {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "nav"
-      "content";
+      'nav'
+      'content';
+  }
+  .menu-modal {
+    min-width: 60px;
+    top: 3.5em;
+    left: 0.5em;
+    right: 1.5em;
+    transform: translate(0%);
   }
 }
