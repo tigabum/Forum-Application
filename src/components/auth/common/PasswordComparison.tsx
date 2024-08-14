@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { allowSubmit } from './Helpers';
-import { isPasswordValid,passwordTestProps } from '../../common/validators/PasswordValidators';
+import {
+  isPasswordValid,
+  passwordTestProps,
+} from '../../common/validators/PasswordValidators';
 
 export interface passwordComparisonProps {
   dispatch: React.Dispatch<any>;
@@ -21,7 +24,7 @@ const PasswordComparison: FC<passwordComparisonProps> = ({
       allowSubmit(dispatch, validPassword.message, true);
       return;
     }
-    isPasswordMatch(e.target.value, passwordConfirm);
+    isPasswordMatch(passwordConfirm, password);
   };
   const handlePasswordConfirm = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: 'passwordConfirm', payload: e.target.value });
