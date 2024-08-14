@@ -21,7 +21,6 @@ export const isPasswordValid = (password: string): passwordTestProps => {
     passwordTest.message =
       'Password must contain atleast 1 special character 1 cap 1 number';
     passwordTest.isValid = false;
-    return passwordTest;
   }
   return passwordTest;
 };

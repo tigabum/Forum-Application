@@ -3,22 +3,16 @@ import ModalProps from '../types/ModalProps';
 import ReactModal from 'react-modal';
 import userReducers from './common/userReducers';
 import { allowSubmit } from './common/Helpers';
-import './Registration.css';
-import PasswordComparison from './common/PasswordComparison';
 
-const Registration: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
-  const [
-    { userName, password, email, passwordConfirm, resultMsg, isSubmitDisabled },
-    dispatch,
-  ] = useReducer(userReducers, {
-    userName: 'firstuser',
-    password: '',
-    email: 'tigano@gmail.com',
-    passwordConfirm: '',
-    resultMsg: '',
-    isSubmitDisabled: true,
-  });
-  console.log('register');
+const Login: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
+  const [{ userName, password, resultMsg, isSubmitDisabled }, dispatch] =
+    useReducer(userReducers, {
+      userName: '',
+      password: '',
+      resultMsg: '',
+      isSubmitDisabled: true,
+    });
+  console.log('Login');
 
   const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: 'userName', payload: e.target.value });
@@ -27,19 +21,18 @@ const Registration: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
     else allowSubmit(dispatch, '', false);
   };
 
-  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: 'email', payload: e.target.value });
-    if (!e.target.value) allowSubmit(dispatch, 'email cannot be empty', true);
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch({ type: 'password', payload: e.target.value });
+    if (!e.target.value)
+      allowSubmit(dispatch, 'password cannot be empty', true);
     else allowSubmit(dispatch, '', false);
   };
 
-  const handleRegister = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleLogin = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
     onClickToggle(e);
-    console.log('username password emaail', userName, email);
+    console.log('username password emaail', userName, password);
   };
 
   const handleCancel = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -58,16 +51,9 @@ const Registration: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
             <label>Username</label>
             <input type="text" value={userName} onChange={onChangeUsername} />
           </div>
-          <div className="email">
-            <label>Email</label>
-            <input type="text" value={email} onChange={onChangeEmail} />
-          </div>
-          <div>
-            <PasswordComparison
-              dispatch={dispatch}
-              password={password}
-              passwordConfirm={passwordConfirm}
-            />
+          <div className="password">
+            <label>Password</label>
+            <input type="text" value={password} onChange={onChangePassword} />
           </div>
         </div>
         <div className="form-btns">
@@ -75,10 +61,10 @@ const Registration: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
             <button
               style={{ marginLeft: '0.5em' }}
               className="action-btn"
-              onClick={handleRegister}
+              onClick={handleLogin}
               disabled={isSubmitDisabled}
             >
-              Register
+              Login
             </button>
             <button
               style={{ marginLeft: '0.5em' }}
@@ -95,4 +81,4 @@ const Registration: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
   );
 };
 
-export default Registration;
+export default Login;
