@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useWindowDimensions } from '../hooks/useWindowDimensions';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import './Nav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser } from '@fortawesome/free-solid-svg-icons';
