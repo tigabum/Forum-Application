@@ -4,22 +4,22 @@ export interface passwordTestProps {
 }
 export const isPasswordValid = (password: string): passwordTestProps => {
   const passwordTest: passwordTestProps = {
-    message: '',
+    message: "",
     isValid: false,
   };
   if (password.length < 8) {
-    passwordTest.message = 'Password must be at least 8 characters';
+    passwordTest.message = "Password must be at least 8 characters";
     passwordTest.isValid = false;
     return passwordTest;
   }
 
   const strongPassword = new RegExp(
-    '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})'
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})",
   );
 
   if (!strongPassword.test(password)) {
     passwordTest.message =
-      'Password must contain atleast 1 special character 1 cap 1 number';
+      "Password must contain atleast 1 special character 1 cap 1 number";
     passwordTest.isValid = false;
   }
   return passwordTest;

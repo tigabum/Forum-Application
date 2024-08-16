@@ -1,13 +1,12 @@
 .home-container {
   margin: 0 auto;
-  max-width: 1200px;
 
   display: grid;
   grid-template-columns: 0.7fr 0.9fr 1.5fr 0.9fr;
   grid-template-rows: 2.75rem 3fr;
   grid-template-areas:
-    'nav nav nav nav'
-    'sidebar leftmenu content rightmenu';
+    "nav nav nav nav"
+    "sidebar leftmenu content rightmenu";
   gap: 0.75rem 0.4rem;
 }
 
@@ -38,7 +37,7 @@
   .home-container {
     grid-template-columns: 1fr;
     grid-template-areas:
-      'nav'
-      'content';
+      "nav"
+      "content";
   }
 }

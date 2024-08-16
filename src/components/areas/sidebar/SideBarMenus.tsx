@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { AppState } from '../../../store/AppState';
-import { useDispatch } from 'react-redux';
-import { UserProfileSetType } from '../../../store/user/reducer';
-import './SideBarMenus.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { AppState } from "../../../store/AppState";
+import { useDispatch } from "react-redux";
+import { UserProfileSetType } from "../../../store/user/reducer";
+import "./SideBarMenus.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRegistered,
   faSignInAlt,
   faSignOutAlt,
   faUser,
-} from '@fortawesome/free-solid-svg-icons';
-import Registration from '../../auth/Registration';
-import Login from '../../auth/Login';
-import Logout from '../../auth/Logout';
+} from "@fortawesome/free-solid-svg-icons";
+import Registration from "../../auth/Registration";
+import Login from "../../auth/Login";
+import Logout from "../../auth/Logout";
 
 const SideBarMenus = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const SideBarMenus = () => {
       type: UserProfileSetType,
       payload: {
         id: 1,
-        userName: 'Testuser',
+        userName: "Testuser",
       },
     });
   }, [dispatch]);
@@ -53,7 +53,7 @@ const SideBarMenus = () => {
         <li>
           <FontAwesomeIcon icon={faRegistered} />
           <span onClick={onClickToggleRegister} className="menu-user">
-            Register{' '}
+            Register{" "}
           </span>
           <Registration
             isOpen={showRegister}
@@ -63,14 +63,14 @@ const SideBarMenus = () => {
         <li>
           <FontAwesomeIcon icon={faSignInAlt} />
           <span onClick={onClickToggleLogin} className="menu-user">
-            Login{' '}
+            Login{" "}
           </span>
           <Login isOpen={showLogin} onClickToggle={onClickToggleLogin} />
         </li>
         <li>
           <FontAwesomeIcon icon={faSignOutAlt} />
           <span onClick={onClickToggleLogout} className="menu-user">
-            Logout{' '}
+            Logout{" "}
           </span>
           <Logout isOpen={showLogout} onClickToggle={onClickToggleLogout} />
         </li>

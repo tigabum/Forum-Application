@@ -1,5 +1,5 @@
-import React from 'react';
-import { useWindowDimensions } from '../../hooks/useWindowDimensions';
+import React from "react";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 
 function RightMenu() {
   const { width } = useWindowDimensions();

@@ -1,9 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
 
-import Home from './components/routes/Home';
+import Home from "./components/routes/Home";
 
 function App() {
   const renderHome = (props: any) => <Home {...props} />;

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useWindowDimensions } from '../../hooks/useWindowDimensions';
-import { getCategories } from '../../services/DataService';
-import Category from '../../models/Category';
+import React, { useEffect, useState } from "react";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { getCategories } from "../../services/DataService";
+import Category from "../../models/Category";
 
 function LeftMenu() {
   const { width } = useWindowDimensions();
   const [categories, setCategories] = useState<JSX.Element>(
-    <div>Left Item</div>
+    <div>Left Item</div>,
   );
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function LeftMenu() {
 
         setCategories(<ul className="category">{cats} </ul>);
       })
-      .catch((err) => console.log('error inside LeftMenu', err));
+      .catch((err) => console.log("error inside LeftMenu", err));
   }, []);
 
   if (width <= 760) {

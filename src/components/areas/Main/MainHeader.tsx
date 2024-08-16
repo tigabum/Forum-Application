@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
-import Category from '../../../models/Category';
+import React, { FC } from "react";
+import "./MainHeader.css";
+import Category from "../../../models/Category";
 
 export interface mainHeaderProps {
   category?: Category;
@@ -8,8 +9,11 @@ export interface mainHeaderProps {
 const MainHeader: FC<mainHeaderProps> = ({ category }) => {
   return (
     <div className="main-header">
-      <div className="title-bar">
-        <strong>{category?.name || 'Category section'} </strong>
+      <div
+        className="title-bar"
+        style={{ marginBottom: "0.5em", paddingBottom: "0" }}
+      >
+        <strong>{category?.name || "Category section"} </strong>
       </div>
     </div>
   );

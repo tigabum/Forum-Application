@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { allowSubmit } from './Helpers';
+import React, { FC } from "react";
+import { allowSubmit } from "./Helpers";
 import {
   isPasswordValid,
   passwordTestProps,
-} from '../../common/validators/PasswordValidators';
+} from "../../common/validators/PasswordValidators";
 
 export interface passwordComparisonProps {
   dispatch: React.Dispatch<any>;
@@ -17,7 +17,7 @@ const PasswordComparison: FC<passwordComparisonProps> = ({
   passwordConfirm,
 }) => {
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: 'password', payload: e.target.value });
+    dispatch({ type: "password", payload: e.target.value });
     const validPassword: passwordTestProps = isPasswordValid(password);
 
     if (!validPassword.isValid) {
@@ -27,16 +27,16 @@ const PasswordComparison: FC<passwordComparisonProps> = ({
     isPasswordMatch(passwordConfirm, password);
   };
   const handlePasswordConfirm = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: 'passwordConfirm', payload: e.target.value });
+    dispatch({ type: "passwordConfirm", payload: e.target.value });
     isPasswordMatch(e.target.value, password);
   };
 
   const isPasswordMatch = (passwordVal: string, confirmPassVal: string) => {
     if (passwordVal !== confirmPassVal) {
-      allowSubmit(dispatch, 'Password do not match', true);
+      allowSubmit(dispatch, "Password do not match", true);
       return false;
     } else {
-      allowSubmit(dispatch, '', false);
+      allowSubmit(dispatch, "", false);
       return true;
     }
   };

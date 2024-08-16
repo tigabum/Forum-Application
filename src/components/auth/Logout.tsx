@@ -1,15 +1,15 @@
-import React, { FC, useReducer } from 'react';
-import ModalProps from '../types/ModalProps';
-import ReactModal from 'react-modal';
+import React, { FC, useReducer } from "react";
+import ModalProps from "../types/ModalProps";
+import ReactModal from "react-modal";
 
 const Logout: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
-  console.log('Logout');
+  console.log("Logout");
 
   const handleLogout = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
     onClickToggle(e);
-    console.log('username password emaail logout');
+    console.log("username password emaail logout");
   };
 
   const handleCancel = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -28,14 +28,14 @@ const Logout: FC<ModalProps> = ({ isOpen, onClickToggle }) => {
         <div className="form-btns">
           <div className="form-btns-left">
             <button
-              style={{ marginLeft: '0.5em' }}
+              style={{ marginLeft: "0.5em" }}
               className="action-btn"
               onClick={handleLogout}
             >
               Logout
             </button>
             <button
-              style={{ marginLeft: '0.5em' }}
+              style={{ marginLeft: "0.5em" }}
               className="cancel-btn"
               onClick={handleCancel}
             >

@@ -1,25 +1,25 @@
 const userReducers = (state: any, action: any) => {
   switch (action.type) {
-    case 'userName': {
+    case "userName": {
       return { ...state, userName: action.payload };
     }
-    case 'password': {
+    case "password": {
       return { ...state, password: action.payload };
     }
-    case 'email': {
+    case "email": {
       return { ...state, email: action.payload };
     }
-    case 'passwordConfirm': {
+    case "passwordConfirm": {
       return { ...state, passwordConfirm: action.payload };
     }
-    case 'resultMsg': {
+    case "resultMsg": {
       return { ...state, resultMsg: action.payload };
     }
-    case 'isSubmitDisabled': {
+    case "isSubmitDisabled": {
       return { ...state, isSubmitDisabled: action.payload };
     }
     default:
-      return { ...state, resultMsg: 'An error occured' };
+      return { ...state, resultMsg: "An error occured" };
   }
 };
 
