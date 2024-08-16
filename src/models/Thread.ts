@@ -1,5 +1,5 @@
-import Category from './Category';
-import ThreadItem from './ThreadItem';
+import Category from "./Category";
+import ThreadItem from "./ThreadItem";
 
 export default class Thread {
   constructor(
@@ -13,6 +13,6 @@ export default class Thread {
     public createdOn: Date,
     public lastModifiedOn: Date,
     public threadItems: Array<ThreadItem>,
-    public category: Category
+    public category: Category,
   ) {}
 }

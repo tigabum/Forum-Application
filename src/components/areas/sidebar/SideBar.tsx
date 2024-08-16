@@ -1,6 +1,6 @@
-import React from 'react';
-import { useWindowDimensions } from '../../../hooks/useWindowDimensions';
-import SideBarMenus from './SideBarMenus';
+import React from "react";
+import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
+import SideBarMenus from "./SideBarMenus";
 
 function SideBar() {
   const { width } = useWindowDimensions();

@@ -2,6 +2,8 @@
   --min-screen-height: 1000px;
   --border-color: gray;
   --border: solid 0.1em var(--border-color);
+  --panel-border-thickness: 0.05em;
+  --panel-color: white;
 }
 
 .screen-root-container {
@@ -40,8 +42,8 @@
   color: red;
 }
 
-input[type='text'],
-input[type='password'],
+input[type="text"],
+input[type="password"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -52,7 +54,7 @@ select {
   box-sizing: border-box;
 }
 
-input[type='submit']:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
 .action-btn {
@@ -72,6 +74,17 @@ input[type='submit']:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.panel {
+  display: flex;
+  flex-direction: row;
+  border: solid var(--panel-border-thickness) var(--border-color);
+  border-radius: 0.7em;
+  background-color: var(--panel-color);
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media screen and (orientation: portrait) and (max-width: 760px) {
   .menu-modal {
