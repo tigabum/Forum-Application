@@ -4,41 +4,14 @@
   --border: solid 0.1em var(--border-color);
 }
 
-.App {
+.screen-root-container {
   margin: 0 auto;
   max-width: 1200px;
-
-  display: grid;
-  grid-template-columns: 0.7fr 0.9fr 1.5fr 0.9fr;
-  grid-template-rows: 2.75rem 3fr;
-  grid-template-areas:
-    'nav nav nav nav'
-    'sidebar leftmenu content rightmenu';
-  gap: 0.75rem 0.4rem;
+  margin-bottom: 2em;
+  border: var(--border);
+  border-radius: 0.3em;
 }
 
-.navigation {
-  grid-area: nav;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  min-height: var(--min-screen-height);
-  background-color: lightblue;
-}
-.leftmenu {
-  grid-area: leftmenu;
-  background-color: lightgreen;
-}
-.content {
-  grid-area: content;
-  min-height: var(--min-screen-height);
-  background-color: lightyellow;
-}
-.rightmenu {
-  grid-area: rightmenu;
-  background-color: gray;
-}
 .menu-modal {
   position: fixed;
   min-width: 500px;
@@ -101,12 +74,6 @@ input[type='submit']:hover {
   cursor: pointer;
 }
 @media screen and (orientation: portrait) and (max-width: 760px) {
-  .App {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'nav'
-      'content';
-  }
   .menu-modal {
     min-width: 60px;
     top: 3.5em;
