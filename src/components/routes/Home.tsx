@@ -4,7 +4,7 @@ import Nav from "../areas/Nav";
 import SideBar from "../areas/sidebar/SideBar";
 import LeftMenu from "../areas/LeftMenu";
 import Main from "../areas/Main/Main";
-import RightMenu from "../areas/RightMenu";
+import RightMenu from "../areas/rightMenu/RightMenu";
 
 import "./Home.css";
 

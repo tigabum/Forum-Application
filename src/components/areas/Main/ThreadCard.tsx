@@ -47,7 +47,7 @@ const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
           <span>
             <label>
               {thread.views}
-              <FontAwesomeIcon icon={faEye} />
+              <FontAwesomeIcon icon={faEye} style={{ marginLeft: "0.5em" }} />
             </label>
           </span>
           <span>
