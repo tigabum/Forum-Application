@@ -13,7 +13,7 @@ function RightMenu() {
   useEffect(() => {
     getTopCategories().then((res) => {
       const topCategoriesGrouped = groupBy(res, "category");
-      console.log("topCategoriesGrouped", topCategoriesGrouped);
+      console.log("topCategoriesGrouped is found", topCategoriesGrouped);
       let groupedOnlyValues: any = [];
       for (let key in topCategoriesGrouped) {
         let topCategory = topCategoriesGrouped[key];
