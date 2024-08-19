@@ -86,6 +86,10 @@ input[type="submit"]:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.clickable-span {
+  cursor: pointer;
+}
 @media screen and (orientation: portrait) and (max-width: 760px) {
   .menu-modal {
     min-width: 60px;

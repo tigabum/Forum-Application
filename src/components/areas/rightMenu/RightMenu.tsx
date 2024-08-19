@@ -6,8 +6,10 @@ import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
 import { getTopCategories } from "../../../services/DataService";
 import TopCategories from "./TopCategories";
 
+import "./RightMenu.css";
+
 function RightMenu() {
-  const [categories, setCategories] = useState<JSX.Element>();
+  const [categories, setCategories] = useState<JSX.Element | undefined>();
   const { width } = useWindowDimensions();
 
   useEffect(() => {
@@ -30,7 +32,7 @@ function RightMenu() {
   if (width <= 760) {
     return null;
   }
-  return <div className="rightmenu">{categories} </div>;
+  return <div className="rightmenu rightmenu-container">{categories} </div>;
 }
 
 export default RightMenu;
