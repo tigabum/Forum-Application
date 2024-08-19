@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Thread from "../../../models/Thread";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faReply } from "@fortawesome/free-solid-svg-icons";
 import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
@@ -13,7 +13,13 @@ export interface ThreadCardProps {
 }
 
 const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
+  const history = useHistory()
   const { width } = useWindowDimensions();
+
+  const showThread = (e:React.MouseEvent<HTMLDivElement>) => {
+    history.push(`/thread/${thread.id}`)
+    console.log("threadid", thread.id)
+  };
 
   const getResponse = (thread: Thread) => {
     if (width < 760) {
@@ -34,12 +40,25 @@ const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
           <Link to={`/categorythreads/${thread.category.id}`}>
             <strong>{thread?.category.name}</strong>
           </Link>
-          <span className="username-header">{thread.userName}</span>
+          <span className="username-header" style={{ marginLeft: "0.5em" }}>
+            {thread.userName}
+          </span>
         </div>
 
         <div className="question">
-          <div className="title">{thread.title}</div>
-          <div className="threadcard-body">
+          <div
+            className="title"
+            style={{ marginBottom: "0.4em" }}
+            onClick={showThread}
+            data-thread-id={thread.id}
+          >
+            <strong> {thread.title}</strong>
+          </div>
+          <div
+          className="threadcard-body"
+          onClick={showThread}
+          data-thread-id={thread.id}
+          >
             <div>{thread.body}</div>
           </div>
         </div>
