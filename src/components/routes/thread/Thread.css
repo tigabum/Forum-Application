@@ -1,0 +1,23 @@
+.thread-nav-container {
+  margin-top: 0;
+}
+.thread-content-container {
+  display: grid;
+  grid-template-columns: 1fr 4em;
+  grid0template-row: 1fr auto;
+  margin-top: 0.5em;
+}
+
+.thread-header-container {
+  border-bottom: var(--input-border);
+  padding-bottom: 0.75em;
+}
+
+.thread-category-container {
+  margin-top: 1em;
+}
+
+.thread-category-dropdown {
+  margin-top: 0.5em;
+  max-width: 12em;
+}

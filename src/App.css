@@ -4,6 +4,9 @@
   --border: solid 0.1em var(--border-color);
   --panel-border-thickness: 0.05em;
   --panel-color: white;
+
+  --input-border-color: #e6ebf1;
+  --input-border: solid 3px var(--input-border-color);
 }
 
 .screen-root-container {
