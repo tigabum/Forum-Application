@@ -13,12 +13,12 @@ export interface ThreadCardProps {
 }
 
 const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
-  const history = useHistory()
+  const history = useHistory();
   const { width } = useWindowDimensions();
 
-  const showThread = (e:React.MouseEvent<HTMLDivElement>) => {
-    history.push(`/thread/${thread.id}`)
-    console.log("threadid", thread.id)
+  const showThread = (e: React.MouseEvent<HTMLDivElement>) => {
+    history.push(`/thread/${thread.id}`);
+    console.log("threadid", thread.id);
   };
 
   const getResponse = (thread: Thread) => {
@@ -55,9 +55,9 @@ const ThreadCard: FC<ThreadCardProps> = ({ thread }) => {
             <strong> {thread.title}</strong>
           </div>
           <div
-          className="threadcard-body"
-          onClick={showThread}
-          data-thread-id={thread.id}
+            className="threadcard-body"
+            onClick={showThread}
+            data-thread-id={thread.id}
           >
             <div>{thread.body}</div>
           </div>
